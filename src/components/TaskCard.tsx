@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import type { Task } from '../models/Task.model';
-import TaskContext from "../context/TaskContext";
+import { useTask } from '../hooks/useTask'
 
 
 const TaskCard: React.FC = () => {
-    const { state, dispatch } = useContext(TaskContext)
+    const { state, dispatch } = useTask()
     const [editTask, setEditTask] = useState<string | null>(null);
     const [editTitle, setEditTitle] = useState('');
     const [editDescription, setEditDescription] = useState('');

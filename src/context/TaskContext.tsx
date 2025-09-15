@@ -4,7 +4,7 @@ import type { Task, TaskAction } from "../models/Task.model";
 interface TaskState {
     tasks: Task[];
 }
- 
+
 const initialState: TaskState = {
     tasks: []
 }
@@ -65,4 +65,4 @@ export default TaskContext;
 //the context provider wraps the app and provides the state
 //and dispatch function to the components that need it
 
-//(!context) throw new Error("useTask must be used within a TaskProvider");
+

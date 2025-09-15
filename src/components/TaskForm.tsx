@@ -1,12 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Button, Container, Form, Col } from 'react-bootstrap'
 import { v4 as uuidv4 } from 'uuid';
 import type { Task } from "../models/Task.model";
-import TaskContext from "../context/TaskContext";
+import { useTask } from "../hooks/useTask"
 
 
 const TaskForm: React.FC = () => {
-    const { dispatch } = useContext(TaskContext);
+    const { dispatch } = useTask();
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 
