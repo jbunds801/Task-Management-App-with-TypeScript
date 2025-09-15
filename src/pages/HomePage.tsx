@@ -1,7 +1,8 @@
+import React from "react";
+import { Container, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import PageLayout from "../components/PageLayout";
-import { Container, Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
 
@@ -15,25 +16,27 @@ const HomePage: React.FC = () => {
         <>
             <PageLayout>
                 <Container>
-                    <Col>
-                        <h1>Welcome!</h1>
-                    </Col>
+                    <div>
+                        <h1 className="mb-4">Welcome!</h1>
+                    </div>
 
                     {!isAuthenticated &&
                         <>
-                            <p>Log in to get started!</p>
+                            <div className="mb-4">
+                                <p>Log in to get started!</p>
+                            </div>
                             <LoginButton />
                         </>
                     }
 
                     {isAuthenticated &&
                         <>
-                            <h3>Let's get started!</h3>
-                            <Col>
+                            <h4 className='mb-5'>Let's get started!</h4>
+                            <div>
                                 <Link to='/tasks'>
-                                    <Button>View Tasks</Button>
+                                    <Button className="bg-info text-dark mb-5 border border-info">View Tasks</Button>
                                 </Link>
-                            </Col>
+                            </div>
                             <LogoutButton />
                         </>
                     }

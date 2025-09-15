@@ -6,12 +6,15 @@ type AuthenticationGuardProps = {
 
 const AuthenticationGuard: React.FC<AuthenticationGuardProps> = ({ component }) => {
     const Component = withAuthenticationRequired(component, {
-        onRedirecting: () => <div>Redirecting you to the login page...</div>,
-    });
+        onRedirecting: () => <div
+            className="d-flex justify-content-center mt-5">
+        Redirecting you to the login page...
+        </div>,
+    })
 
     return (
         <Component />
-    );
-};
+    )
+}
 
 export default AuthenticationGuard;

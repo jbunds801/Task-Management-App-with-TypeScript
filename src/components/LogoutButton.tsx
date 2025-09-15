@@ -1,11 +1,11 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "react-bootstrap";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const LogoutButton: React.FC = () => {
     const { logout, isAuthenticated } = useAuth0();
 
-    const handleLogout =  () => {
+    const handleLogout = () => {
         logout({
             logoutParams: {
                 returnTo: window.location.origin,
@@ -13,7 +13,7 @@ const LogoutButton: React.FC = () => {
         });
     };
 
-    if (isAuthenticated) return (<Button onClick={handleLogout}>Log Out</Button>)
+    if (isAuthenticated) return (<Button className='bg-info text-dark border border-info' onClick={handleLogout}>Log Out</Button>)
     return null;
 };
 

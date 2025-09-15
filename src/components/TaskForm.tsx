@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
+import { Button, Container, Form, Col } from 'react-bootstrap'
 import { v4 as uuidv4 } from 'uuid';
 import type { Task } from "../models/Task.model";
 import TaskContext from "../context/TaskContext";
-import { Button, Container, Form } from 'react-bootstrap'
 
 
 const TaskForm: React.FC = () => {
@@ -25,23 +25,30 @@ const TaskForm: React.FC = () => {
 
 
     return (
-        <Container>
-            <Form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="enter task"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder="enter task description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                />
-                <Button type="submit">Add</Button>
-            </Form>
+        <Container className="mb-3">
+            <Col>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3 px-5">
+                        <Form.Control className="border border-info"
+                            type="text"
+                            placeholder="enter task"
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            required
+                        />
+                    </Form.Group>
+                    <Form.Group className="mb-3 px-5">
+                        <Form.Control className="border border-info"
+                            type="text"
+                            placeholder="enter task description"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                        />
+                    </Form.Group>
+
+                    <Button className='bg-info text-dark my-3 border border-info' type="submit">Add</Button>
+                </Form>
+            </Col>
         </Container >
     );
 };

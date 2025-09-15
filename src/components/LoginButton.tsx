@@ -1,6 +1,6 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "react-bootstrap";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const LoginButton: React.FC = () => {
     const { loginWithRedirect, isAuthenticated } = useAuth0();
@@ -16,7 +16,7 @@ const LoginButton: React.FC = () => {
         });
     };
 
-    if (!isAuthenticated) return (<Button onClick={handleLogin}>Log In</Button>)
+    if (!isAuthenticated) return (<Button className='bg-info text-dark border border-info' onClick={handleLogin}>Log In</Button>)
     return null;
 };
 

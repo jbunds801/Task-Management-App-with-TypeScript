@@ -1,4 +1,5 @@
-import { Row, Col, Container } from "react-bootstrap";
+import React from "react";
+import { Container } from "react-bootstrap";
 import NavBar from "./NavBar";
 
 type PageLayoutProps = {
@@ -9,13 +10,11 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
 
     return (
         <>
-            <Container>
-                <Row>
-                    <NavBar />
-                </Row>
-                <Col>
+            <NavBar />
+            <Container className="d-flex justify-content-center text-center p-4 mt-5">
+                <div>
                     {children}
-                </Col>
+                </div>
             </Container>
         </>
     );
