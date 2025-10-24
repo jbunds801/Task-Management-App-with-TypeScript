@@ -17,7 +17,7 @@ const Auth0ProviderWithNavigate: React.FC<Auth0ProviderWithNavigateProps> = ({
 
 
     const onRedirectCallback = (appState: any) => {
-        navigate((appState && appState.returnTo) || window.location.pathname);
+        navigate((appState && appState.returnTo) || "/tasks");
     };
 
     if (!(domain && clientId && redirectUri)) {
