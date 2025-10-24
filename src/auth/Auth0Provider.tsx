@@ -10,9 +10,11 @@ const Auth0ProviderWithNavigate: React.FC<Auth0ProviderWithNavigateProps> = ({
     children,
 }) => {
     const navigate = useNavigate();
-    const domain = "dev-6gkxc10ny680fu5e.us.auth0.com";
-    const clientId = "bMS6VFJeJ5etikosRNJNasKolmLTzCRk";
-    const redirectUri = "http://localhost:5173/callback"; 
+    const domain = import.meta.env.VITE_PUBLIC_AUTH0_DOMAIN;
+    const clientId = import.meta.env.VITE_PUBLIC_AUTH0_CLIENT_ID;
+    const redirectUri =
+        import.meta.env.VITE_PUBLIC_AUTH0_CALLBACK_URL || "http://localhost:5173/callback";
+
 
     const onRedirectCallback = (appState: any) => {
         navigate((appState && appState.returnTo) || window.location.pathname);

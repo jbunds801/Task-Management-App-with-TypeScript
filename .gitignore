@@ -22,4 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-*.folderstructure.rtf
+*.future-ideas.md
+*.env.local
